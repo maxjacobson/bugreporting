@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Buggy Todo List</title>
+</head>
+<body>
+  <h1>My Todo List</h1>
+  <form><input type="text" placeholder="new todo item" autofocus /></form>
+  <ul></ul>
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+    $(function() {
+      $("form").on("submit", function(e) {
+        e.preventDefault();
+        var input = $(this).find("input");
+        var val = input.val();
+        var li = $("<li />").text(val);
+        $("ul").append(li);
+        input.val("");
+      });
+    });
+  </script>
+</body>
+</html>
+
