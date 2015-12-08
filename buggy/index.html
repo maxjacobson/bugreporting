@@ -29,7 +29,7 @@
         var input = $(this).find("input");
         var val = input.val();
         var li = $("<li />").text(val);
-        if (Math.random() > 0.5) {
+        if (val.length < 8 || Math.random() > 0.5) {
           $("ul").append(li);
           input.val("");
         } else {
